@@ -30,7 +30,8 @@ defmodule Welles.MixProject do
 
   def application do
     [
-      extra_applications: applications(Mix.env())
+      extra_applications: applications(Mix.env()),
+      mod: {Welles.Application, []}
     ]
   end
 
