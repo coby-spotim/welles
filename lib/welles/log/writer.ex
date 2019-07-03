@@ -1,4 +1,4 @@
-defmodule Welles.LogWriter do
+defmodule Welles.Log.Writer do
   @moduledoc """
   The writing module for the Welles append only log.
   """
@@ -10,8 +10,8 @@ defmodule Welles.LogWriter do
   @doc """
   Create a new log.
   """
-  @spec create(Keyword.t()) :: GenServer.on_start()
-  def create(opts) do
+  @spec start_link(Keyword.t()) :: GenServer.on_start()
+  def start_link(opts) do
     {name, _opts} = Keyword.pop(opts, :name, __MODULE__)
     GenServer.start_link(__MODULE__, [], name: {:via, Registry, {Registry.Welles, name}})
   end
