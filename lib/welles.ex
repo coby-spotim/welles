@@ -31,16 +31,16 @@ defmodule Welles do
 
       iex> Welles.create_log("my_log")
       {:ok, :created}
-      iex> Welles.add_event("my_event", "my_log")
+      iex> Welles.add_event("my_log", "my_event")
       :added
 
   In the next example we attempt to add an event to a log that doesn't exist.
 
-      iex> Welles.add_event("my_event", "my_log")
+      iex> Welles.add_event("my_log", "my_event")
       :not_found
   """
-  @spec add_event(binary, String.t()) :: Log.on_new_event()
-  def add_event(event, log_name) do
-    Log.add_event(event, log_name)
+  @spec add_event(String.t(), String.t()) :: Log.on_new_event()
+  def add_event(log_name, event) do
+    Log.add_event(log_name, event)
   end
 end
