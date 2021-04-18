@@ -10,7 +10,7 @@ defmodule Welles.MixProject do
       start_permanent: Mix.env() == :prod,
       package: package(),
       name: "Welles",
-      source_url: "https://github.com/coby-spotim/welles",
+      source_url: "https://github.com/probably-not/welles",
       deps: deps(),
       elixirc_paths: elixirc_paths(Mix.env()),
       # elixirc_options: [warnings_as_errors: true],
@@ -56,7 +56,7 @@ defmodule Welles.MixProject do
       # These are the default files included in the package
       files: ["lib", "mix.exs", "README.md"],
       maintainers: ["Coby Benveniste"],
-      links: %{"GitHub" => "https://github.com/coby-spotim/welles"},
+      links: %{"GitHub" => "https://github.com/probably-not/welles"},
       licenses: ["MIT License"]
     ]
   end
